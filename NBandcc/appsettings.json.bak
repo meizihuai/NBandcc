@@ -1,0 +1,24 @@
+{
+  "AppVersion": "1.0.1",
+  //数据库连接字符串
+  "MysqlConnection": "server=192.168.100.129;port=3307;database=NBandccDB;uid=root;password=Smart9080;sslmode=none;Character Set=utf8",
+  //本地服务器地址
+  "LocalServerUrl": "http://192.168.100.129:5000",
+  //编码码率
+  "EncodeRate": 256000,
+  //MQ参数
+  "MQ_HostName": "172.17.0.4", //172.17.0.4
+  "MQ_UserName": "guest",
+  "MQ_Password": "guest",
+  //数据入列参数
+  "MQ_File_QueueName": "nbandcc_file_queue",
+  "MQ_Block_QueueName": "nbandcc_block_queue",
+  //编解码程序路径设置
+  "FFmpegPath": "../ffmpeg_4.1.3/",
+  //上传服务器地址
+  "ServerUrl": "http://192.168.100.1:5002",
+  //上传参数
+  "UploadPerlen": 20,
+  "ConnectTimeout": 10,
+  "WriteTimeOut": 180
+}

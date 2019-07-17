@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NBandcc</name>
+    </assembly>
+    <members>
+        <member name="T:NBandcc.DeviceClient">
+            <summary>
+            用于设备注册、登陆进远端服务器
+            </summary>
+        </member>
+        <member name="M:NBandcc.DeviceHelper.GetMacAddress">
+            <summary>  
+            获取本机MAC地址  
+            </summary>  
+            <returns>本机MAC地址</returns>  
+        </member>
+        <member name="T:NBandcc.EmptyDirAndZeroFileCleaner">
+            <summary>
+            空文件夹和0大小文件清理
+            </summary>
+        </member>
+        <member name="M:NBandcc.FileUploadHelper.DoWork">
+            <summary>
+            查询数据库待传文件队列
+            </summary>
+            <returns>1表示没有查到任何需要上传的文件，2表示查到了，但是文件不存在，0表示成功</returns>
+        </member>
+        <member name="M:NBandcc.HttpHelper.GetResponse(System.String)">
+            <summary>
+            get请求
+            </summary>
+            <param name="url"></param>
+            <returns></returns>       
+        </member>
+        <member name="M:NBandcc.HttpHelper.PostResponse(System.String,System.String)">
+            <summary>
+            post请求
+            </summary>
+            <param name="url"></param>
+            <param name="postData">post数据</param>
+            <returns></returns>
+        </member>
+        <member name="T:NBandcc.LocalTSFile2DbHelper">
+            <summary>
+            针对RTSP切片后生成的文件入库，遍历文件夹
+            </summary>
+        </member>
+        <member name="M:NBandcc.Logger.Info(System.String,System.Exception)">
+            <summary>
+            普通日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:NBandcc.Logger.Warn(System.String,System.Exception)">
+            <summary>
+            告警日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:NBandcc.Logger.Error(System.String,System.Exception)">
+            <summary>
+            错误日志
+            </summary>
+            <param name="message"></param>
+            <param name="exception"></param>
+        </member>
+        <member name="M:NBandcc.Controllers.AppsettingController.GetAppsetting">
+            <summary>
+            获取配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.AppsettingController.SaveAppsetting(NBandcc.AppSettingInfo)">
+            <summary>
+            保存配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.CheckController.GetInfo">
+            <summary>
+            查询服务信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.CheckController.Health">
+            <summary>
+            健康检查
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.CheckController.GetTime">
+            <summary>
+            获取服务器时间
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.ControlController.OpenRTSP2TsWork">
+            <summary>
+            开启切片进程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.ControlController.CloseRTSP2TsWork">
+            <summary>
+            关闭切片进程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.ControlController.GetRTSPWorkStatus">
+            <summary>
+            查询切片进程状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.ControlController.DoRestartApp">
+            <summary>
+            重启程序
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.EncodeFileController.AddEncodeFileMission(NBandcc.FileEncodeInfo)">
+            <summary>
+            前端上传文件，进行编解码
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.EncodeFileController.DeleteFileQueue(System.Int32)">
+            <summary>
+            删除文件队列记录
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NBandcc.Controllers.EncodeFileController.GetFileQueueList(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            获取文件队列
+            </summary>
+            <param name="startTime">入库起始时间</param>
+            <param name="endTime">入库结束时间</param>
+            <param name="statusCode">状态码,-1表示不筛选状态码</param>
+            <param name="getCount">获取数量,0表示全量</param>
+            <returns></returns>
+        </member>
+        <member name="P:NBandcc.FileEncodeInfo.FileName">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileEncodeInfo.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileEncodeInfo.FileData">
+            <summary>
+            文件内容，base64
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.ID">
+            <summary>
+            数据库主键
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.DateTime">
+            <summary>
+            入库日期
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.FileName">
+            <summary>
+            真实文件名
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.ServerFilePath">
+            <summary>
+            服务器存放路径
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.Guid">
+            <summary>
+            标识ID
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.StatusCode">
+            <summary>
+            状态码 0=未处理，1=转码中，2=已转码，3=上传中，4=已上传
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.Length">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.OutFileLength">
+            <summary>
+            编码后文件大小
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.EncodeRate">
+            <summary>
+            编码比率
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.OutFileName">
+            <summary>
+            编码后文件名
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.OutFilePath">
+            <summary>
+            编码后文件路径
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.EncodeLog">
+            <summary>
+            编码日志
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.EncodeUseSecond">
+            <summary>
+            编码耗时，单位秒
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.InputFileUrl">
+            <summary>
+            输入文件在服务器中形成的URL，供下载
+            </summary>
+        </member>
+        <member name="P:NBandcc.FileQueueInfo.OutputFileUrl">
+            <summary>
+            编码后文件在服务器中形成的URL，供下载
+            </summary>
+        </member>
+        <member name="T:NBandcc.NormalResponse">
+            <summary>
+            一般返回格式,JSON格式
+            </summary>
+        </member>
+        <member name="P:NBandcc.NormalResponse.result">
+            <summary>
+            处理结果，true:成功，false:失败
+            </summary>
+        </member>
+        <member name="P:NBandcc.NormalResponse.msg">
+            <summary>
+            处理消息或处理过程
+            </summary>
+        </member>
+        <member name="P:NBandcc.NormalResponse.errmsg">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="P:NBandcc.NormalResponse.data">
+            <summary>
+            数据，可能是string或者json或者json数组
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.ID">
+            <summary>
+            数据库主键
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.DateTime">
+            <summary>
+            入库日期
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.FileName">
+            <summary>
+            真实文件名
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.DirName">
+            <summary>
+            文件夹名称，用将同组文件放在一次，给服务器使用 m3u8是文件夹内索引
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.ServerFilePath">
+            <summary>
+            服务器存放路径
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.Guid">
+            <summary>
+            标识ID
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.StatusCode">
+            <summary>
+            状态码 0=未处理，1=转码中，2=已转码，3=上传中，4=已上传
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.Length">
+            <summary>
+            文件大小
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.OutFileLength">
+            <summary>
+            编码后文件大小
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.EncodeRate">
+            <summary>
+            编码比率
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.OutFileName">
+            <summary>
+            编码后文件名
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.OutFilePath">
+            <summary>
+            编码后文件路径
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.EncodeLog">
+            <summary>
+            编码日志
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.EncodeUseSecond">
+            <summary>
+            编码耗时，单位秒
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.InputFileUrl">
+            <summary>
+            输入文件在服务器中形成的URL，供下载
+            </summary>
+        </member>
+        <member name="P:NBandcc.RTSPFileQueueInfo.OutputFileUrl">
+            <summary>
+            编码后文件在服务器中形成的URL，供下载
+            </summary>
+        </member>
+        <member name="P:NBandcc.SendQueueInfo.DirName">
+            <summary>
+            文件夹名称，用将同组文件放在一次，给服务器使用 m3u8是文件夹内索引
+            </summary>
+        </member>
+    </members>
+</doc>
